@@ -1,0 +1,7 @@
+*.js
+/.github
+/node_modules
+/scripts
+/docs
+/builds
+/dist

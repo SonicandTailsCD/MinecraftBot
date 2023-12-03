@@ -1,0 +1,36 @@
+{
+	"env": {
+		"browser": true,
+		"es2021": true,
+		"node": true
+	},
+	"parser": "@typescript-eslint/parser",
+	"plugins": [
+		"@typescript-eslint"
+	],
+	"extends": [
+		"plugin:@typescript-eslint/eslint-recommended",
+		"plugin:@typescript-eslint/recommended",
+		"standard-with-typescript"
+	],
+	"rules": {
+		"semi": ["error", "always", { "omitLastInOneLineBlock": true }],
+		"indent": ["error", "tab", { "SwitchCase": 1 }],
+		"no-tabs": ["error", { "allowIndentationTabs": true }],
+		"@typescript-eslint/ban-ts-comment": "off",
+		"@typescript-eslint/semi": ["error", "always", { "omitLastInOneLineBlock": true }],
+		"@typescript-eslint/indent": ["error", "tab", { "SwitchCase": 1 }],
+		"@typescript-eslint/no-tabs": "off",
+		"@typescript-eslint/key-spacing": "off",
+		"@typescript-eslint/strict-boolean-expressions": "off",
+		"no-prototype-builtins": "off"
+	},
+	"globals": {
+
+	},
+	"parserOptions": {
+		"ecmaVersion": "latest",
+		"sourceType": "module",
+		"project": "./tsconfig.json"
+	}
+}
