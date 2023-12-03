@@ -29,7 +29,7 @@
 		"eslint-plugin-import": "^2.27.5",
 		"eslint-plugin-n": "^15.6.1",
 		"eslint-plugin-promise": "^6.1.1",
-		"prismarine-block": "^1.16.3",
+		"prismarine-block": "^1.17.1",
 		"prismarine-chat": "^1.8.0",
 		"prismarine-entity": "^2.3.1",
 		"prismarine-item": "^1.12.1",
