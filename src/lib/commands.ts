@@ -3,6 +3,7 @@ import { sleep } from './sleep.js';
 import pathfinderPkg from 'mineflayer-pathfinder';
 import { type Bot } from 'mineflayer';
 import Vec3 from 'vec3';
+
 const { goals } = pathfinderPkg;
 let bot: Bot;
 export function setup (_bot: Bot): void {
@@ -26,7 +27,8 @@ export const botStates = {
 	ignore: false,
 	commandTriggers: 0,
 	wander: false,
-	kicked: false
+	kicked: false,
+	onDifferentServer: false
 };
 
 // Add here any values when needed.

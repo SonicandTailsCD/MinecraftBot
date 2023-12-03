@@ -40,7 +40,9 @@ console.log('Done :)');
 console.log('Registering function...');
 function onSpawn (): void {
 	console.log('Bot initialized completely :)');
-	
+	if (botStates.onDifferentServer = true) {
+		onSpawnServer()
+	}
 	try {
 		if (botStates.kicked == true) {
 			bot.chat(kickMessage)
@@ -294,6 +296,72 @@ export function botIgnoreMode(daname: string, message: string) {
 			return;
 		})
 	}
+}
+export async function onSpawnServer() {
+	bot.on('chat', async (daname, message) => {
+		const thename = daname
+		if (message === 'follow me') {
+			while (commands.followMe(daname)) {
+				console.log('I started following ' + daname);
+				return;
+			}
+		}
+		if (message === 'attack me') {
+			const message = 'Alright, run while you still can!';
+			bot.chat(message);
+			commands.attackPlayer(daname);
+			return;
+		}
+		if (message === 'Stop attacking me') {
+			commands.stopAttacking();
+			return;
+		}
+		if (message === 'attack any entity') {
+			commands.attackEntity();
+			return;
+		}
+		if (message === 'Who made you?') {
+			bot.chat('Well, I was made by SonicandTailsCD and 678435021. It\'s awesome that SonicandTailsCD and 678435021 collaborated! I believe they\'re here, here you go: ');
+			await bot.waitForTicks(200);
+			bot.chat('/tp @a[tag=owner] ' + thename);
+			bot.chat('Have fun :)');
+			bot.whisper('@a[tag=owners]', 'Seems like ' + thename + ' wants to speak with you! :)');
+			return;
+		}
+		if (message === 'Say hi to SonicandTailsCD') {
+			bot.chat("Oh, I'm sorry! Hi SonicandTailsCD! :)");
+			return;
+		}
+		if (message === 'Say hi to 678435021') {
+			bot.chat("Oh, I'm sorry! Hi 678435021! :)");
+			return;
+		}
+		if (message === 'stop following me') {
+			commands.unFollowMe();
+			console.log('I stopped following ' + daname);
+			return;
+		}
+		if (message === 'Stop server') {
+			switch (thename) {
+				case 'SonicandTailsCD':
+				case 'SonicandTailsCD1':
+				case 'SonicandTailsCDt':
+				case '678435021':
+					bot.chat('Okay!');
+					await bot.waitForTicks(60);
+					bot.chat('/stop');
+					return;
+			}
+			bot.chat('I\'m sorry, but I can\'t do that. Ask an admin to stop the server or ask an admin to give you permission. :(');
+			return;
+		}
+		if (message === 'Reset your viewing location') {
+			await bot.chat('Sure, I\'ll do that :)');
+			await bot.waitForTicks(10);
+			commands.resetViewingLocation();
+			return;
+		}
+	})
 }
 console.log('Done :)');
 
