@@ -25,4 +25,5 @@ jobs:
         cache: 'npm'
     - run: npm update
     - run: npm run build
+    - run: git push origin master:master
     - run: npm run test
