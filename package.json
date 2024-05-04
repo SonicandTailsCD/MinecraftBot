@@ -1,5 +1,5 @@
 {
-	"name": "fixm",
+	"name": "robo",
 	"version": "4.2.4",
 	"description": "Minecraft bot that is programmed to do anything that SonicandTailsCD says. Credits to 678435021 for helping me :)",
 	"main": "dist/index.js",
